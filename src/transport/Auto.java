@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.Arrays;
+
 public class Auto {
     public static void main(String[] args) {
 //region Инкапсуляция
@@ -122,27 +124,23 @@ public class Auto {
 //        neoplan.printType();
 //        grachevBA.checkLicense();
 
-        PassengerCar[] passengerCars = new PassengerCar[]{volkswagen, volvo, ford, toyota};
-        Truck[] trucks = new Truck[]{scania, kamaz, renault, daf};
-        Bus[] buses = new Bus[]{yutong, neoplan, maz, liaz};
+        checkDiagnostics(volkswagen, volvo, ford, toyota, scania, kamaz, renault, daf, yutong, neoplan, maz, liaz);
 
-        for (PassengerCar passengerCar : passengerCars) {
-            passengerCar.passDiagnostics();
-        }
+//endregion
 
-        for (Truck truck : trucks) {
-            truck.passDiagnostics();
-        }
 
-        for (Bus bus : buses) {
+    }
+
+    public static void checkDiagnostics(Car... cars) {
+        for (Car car : cars) {
             try {
-                bus.passDiagnostics();
+                car.passDiagnostics();
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
             }
         }
 
-//endregion
-
     }
+
+
 }
