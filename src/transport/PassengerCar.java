@@ -1,19 +1,35 @@
 package transport;
 
+import java.util.ArrayList;
+
 public class PassengerCar <T extends LicenseB> extends Car implements Competing{
 
     protected BodyType bodyType;
 
+    private ArrayList<T> drivers;
+
     public PassengerCar(String brand, String model, Double engineVolume, BodyType bodyType, String passedDiagnostics) {
         super(brand, model, engineVolume, passedDiagnostics);
         this.bodyType = bodyType;
+        drivers = new ArrayList<>();
     }
 
     public PassengerCar(String brand, String model, Double engineVolume, String passedDiagnostics) {
         super(brand, model, engineVolume, passedDiagnostics);
+        drivers = new ArrayList<>();
     }
 
+    //regionMetods
 
+    @Override
+    public boolean service() {
+        return Math.random() > 0.7;
+    }
+
+    @Override
+    public void repair() {
+        System.out.println("Машина " + getBrand() + " " + getModel() + " починена");
+    }
 
     public BodyType getBodyType() {
             return bodyType;
@@ -22,8 +38,6 @@ public class PassengerCar <T extends LicenseB> extends Car implements Competing{
     public void setBodyType(BodyType BodyType) {
             this.bodyType = bodyType;
     }
-
-    //regionMetods
 
 
     @Override
@@ -38,9 +52,6 @@ public class PassengerCar <T extends LicenseB> extends Car implements Competing{
             }
         }
     }
-
-
-
 
     @Override
     public void printType() {
@@ -82,8 +93,16 @@ public class PassengerCar <T extends LicenseB> extends Car implements Competing{
     }
 //endregion
 
+    public ArrayList<T> getDrivers() {
+        return drivers;
+    }
+
+
     @Override
     public String toString() {
-        return "Легковой автомобиль: " + super.toString() + ", тип кузова: " + getBodyType();
+        return "Легковой автомобиль: " +
+                super.toString() +
+                ", тип кузова: " +
+                getBodyType();
     }
 }

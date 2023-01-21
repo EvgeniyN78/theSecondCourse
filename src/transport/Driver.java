@@ -1,6 +1,6 @@
 package transport;
 
-public abstract class Driver {
+public abstract class Driver <T extends Car>{
 
     private String FIO;
     private String driverLicense;
@@ -50,10 +50,9 @@ public abstract class Driver {
 
     @Override
     public String toString() {
-        return "Driver{" +
-                "FIO='" + FIO + '\'' +
-                ", driverLicense='" + driverLicense + '\'' +
-                ", experience=" + experience +
-                '}';
+        return '\n' + "Водитель: " +
+                "ФИО: " + FIO + " " +
+                driverLicense +
+                ", стаж: " + experience + " лет.";
     }
 }
