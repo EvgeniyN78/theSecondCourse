@@ -1,12 +1,17 @@
 package transport;
 
+import java.util.ArrayList;
+
 public class Truck <T extends LicenseC> extends Car{
 
     protected LoadCapasity loadCapasity;
 
+    private ArrayList<T> drivers;
+
     public Truck(String brand, String model, Double engineVolume, LoadCapasity loadCapasity, String passedDiagnostics) {
         super(brand, model, engineVolume, passedDiagnostics);
         this.loadCapasity = loadCapasity;
+        drivers = new ArrayList<>();
     }
 
     public Truck(String brand, String model, Double engineVolume, String passedDiagnostics) {
@@ -24,7 +29,6 @@ public class Truck <T extends LicenseC> extends Car{
                 System.out.println("Грузовик " + getBrand() + " " + getModel() + " не прошёл диагностику!");
             }
         }
-
     }
 
     @Override
@@ -42,6 +46,20 @@ public class Truck <T extends LicenseC> extends Car{
 
     public void setLoadCapasity(LoadCapasity loadCapasity) {
         this.loadCapasity = loadCapasity;
+    }
+
+    public ArrayList<T> getDrivers() {
+        return drivers;
+    }
+
+    @Override
+    public boolean service() {
+        return Math.random() > 0.75;
+    }
+
+    @Override
+    public void repair() {
+        System.out.println("Грузовик " + getBrand() + " " + getModel() + " починен");
     }
 
     @Override

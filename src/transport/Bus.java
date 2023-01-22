@@ -1,32 +1,37 @@
 package transport;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class Bus <T extends LicenseD> extends Car{
 
     protected Size size;
 
+    private ArrayList<T> drivers;
+
     public Bus(String brand, String model, Double engineVolume, Size size, String passedDiagnostics) {
         super(brand, model, engineVolume, passedDiagnostics);
         this.size = size;
+        drivers = new ArrayList<>();
     }
 
-    public Bus(String brand, String model, Double engineVolume, String passedDiagnostics) {
-        super(brand, model, engineVolume, passedDiagnostics);
+    //regionMetods
+
+    @Override
+    public boolean service() {
+        System.out.println("Автобусу " + getBrand() + " " + getModel() + " диагностика не требуется.");
+        return true;
     }
 
-    public Bus(String brand, String model, Double engineVolume, Size size) {
-        super(brand, model, engineVolume);
-        this.size = size;
+    @Override
+    public void repair() {
+        System.out.println("Автобус " + getBrand() + " " + getModel() + " починен");
     }
 
     @Override
     public void passDiagnostics() throws IllegalArgumentException{
         throw new IllegalArgumentException("Автобусу " + getBrand() + " диагностика не требуется");
     }
-
-
-    //regionMetods
 
     @Override
     public void printType() {
@@ -35,14 +40,6 @@ public class Bus <T extends LicenseD> extends Car{
         } else {
             System.out.println(getSize());
         }
-    }
-
-    public Size getSize() {
-        return size;
-    }
-
-    public void setSize(Size size) {
-        this.size = size;
     }
 
     @Override
@@ -75,6 +72,14 @@ public class Bus <T extends LicenseD> extends Car{
                 " и будет участвовать в заезде");
     }
 //endregion
+
+    public ArrayList<T> getDrivers() {
+        return drivers;
+    }
+
+    public Size getSize() {
+        return size;
+    }
 
     @Override
     public String toString() {

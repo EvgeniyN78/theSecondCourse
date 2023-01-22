@@ -1,6 +1,6 @@
 package transport;
 
-public class LicenseB extends Driver{
+public class LicenseB extends Driver <PassengerCar>{
     public LicenseB(String FIO, String driverLicense, Integer experience) {
         super(FIO, driverLicense, experience);
     }
@@ -37,6 +37,6 @@ public class LicenseB extends Driver{
 
     @Override
     public String toString() {
-        return "LicenseB{} " + super.toString();
+        return super.toString();
     }
 }

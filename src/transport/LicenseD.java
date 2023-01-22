@@ -1,8 +1,11 @@
 package transport;
 
-public class LicenseD extends Driver{
+public class LicenseD extends Driver <Bus>{
     public LicenseD(String FIO, String driverLicense, Integer experience) {
         super(FIO, driverLicense, experience);
+    }
+
+    public LicenseD() {
     }
 
     @Override
