@@ -2,6 +2,7 @@ package transport;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Queue;
 
 import static transport.Size.*;
 
@@ -133,13 +134,13 @@ public class Auto {
 //regionКоллекции
 
         //regionTask1
-        Mechanic<Car> tihanov = new Mechanic<>("Антон Тиханов", "Винтик&Шпунтик");
-        Mechanic<Car> comarov = new Mechanic<>("Сергей Комаров", "Ключ");
-        Mechanic<Car> pavlov = new Mechanic<>("Юрий Павлов", "СТО");
-        Mechanic<Car> fedorov = new Mechanic<>("Игорь Фёдоров", "Поршень");
-        Mechanic<Car> trotskiy = new Mechanic<>("Иван Троцкий", "Граж");
-        Mechanic<Car> somov = new Mechanic<>("Дмитрий Сомов", "СервисАвто");
-        Mechanic<Car> domin = new Mechanic<>("Константин Домин", "Car&Bus");
+        Mechanic<Car> tihanov = new Mechanic<>("Антон Тиханов", "Винтик&Шпунтик", Mechanic.Specialization.MECH_CAR);
+        Mechanic<Car> comarov = new Mechanic<>("Сергей Комаров", "Ключ", Mechanic.Specialization.MECH_TRUCK);
+        Mechanic<Car> pavlov = new Mechanic<>("Юрий Павлов", "СТО", Mechanic.Specialization.MECH_BUS);
+        Mechanic<Car> fedorov = new Mechanic<>("Игорь Фёдоров", "Поршень", Mechanic.Specialization.MECH_CAR_TRUCK);
+        Mechanic<Car> trotskiy = new Mechanic<>("Иван Троцкий", "Граж", Mechanic.Specialization.MECH_TRUCK_BUS);
+        Mechanic<Car> somov = new Mechanic<>("Дмитрий Сомов", "СервисАвто", Mechanic.Specialization.MECH_UNIVERSAL);
+        Mechanic<Car> domin = new Mechanic<>("Константин Домин", "Car&Bus", Mechanic.Specialization.MECH_CAR_BUS);
 
         Sponsor<Car> comfort = new Sponsor<>("Комфорт", 1_000_000);
         Sponsor<Car> layner = new Sponsor<>("Лайнер", 10_000_000);
@@ -150,6 +151,7 @@ public class Auto {
         Sponsor<Car> start = new Sponsor<>("Старт", 12_000_000);
         Sponsor<Car> detal = new Sponsor<>("Деталь", 8_000_000);
 
+//regionArrayListCar_Добавление_механиков_и_спонсоров
         ArrayList<Car> cars = new ArrayList<>();
         cars.add(ford);
         cars.add(volvo);
@@ -173,12 +175,12 @@ public class Auto {
         volvo.getSponsors().add(comfort);
 
         toyota.getDrivers().add(artemovBI);
-        toyota.getMechanics().add(comarov);
+        toyota.getMechanics().add(fedorov);
         toyota.getSponsors().add(layner);
 
         volkswagen.getDrivers().add(samsonovIV);
-        volkswagen.getMechanics().add(comarov);
-        volkswagen.getMechanics().add(pavlov);
+        volkswagen.getMechanics().add(domin);
+        volkswagen.getMechanics().add(somov);
         volkswagen.getSponsors().add(layner);
 
         kamaz.getDrivers().add(costinUA);
@@ -190,16 +192,16 @@ public class Auto {
         renault.getSponsors().add(invest);
 
         daf.getDrivers().add(rimovSV);
-        daf.getMechanics().add(somov);
+        daf.getMechanics().add(comarov);
         daf.getSponsors().add(travel);
 
         scania.getDrivers().add(chelovDA);
-        scania.getMechanics().add(domin);
+        scania.getMechanics().add(comarov);
         scania.getMechanics().add(somov);
         scania.getSponsors().add(stroyavto);
 
         yutong.getDrivers().add(markovFI);
-        yutong.getMechanics().add(fedorov);
+        yutong.getMechanics().add(pavlov);
         yutong.getSponsors().add(prima);
 
         neoplan.getDrivers().add(socolovDB);
@@ -210,7 +212,7 @@ public class Auto {
         maz.getMechanics().add(somov);
         maz.getSponsors().add(stroyavto);
 
-        liaz.getDrivers().add(mironovSE);
+        liaz.getDrivers().add(grachevBA);
         liaz.getMechanics().add(domin);
         liaz.getMechanics().add(somov);
         liaz.getSponsors().add(detal);
@@ -218,12 +220,36 @@ public class Auto {
         for (Car car : cars) {
             System.out.println(car + "" + car.getMechanics() + "" + car.getSponsors());
         }
+        //endregion
+
+        //endregion
+
+        //regionTask2
+        ServiceStation<Car> garage = new ServiceStation<>("Гараж");
+
+        garage.addTransport(ford);
+        garage.addTransport(volvo);
+        garage.addTransport(toyota);
+        garage.addTransport(volkswagen);
+        garage.addTransport(kamaz);
+        garage.addTransport(renault);
+        garage.addTransport(daf);
+        garage.addTransport(scania);
+
+        garage.doService();
+
 
         //endregion
 
 
 
+
  //endregion
+
+
+
+
+
 
     }
 
@@ -236,6 +262,7 @@ public class Auto {
 //            }
 //        }
 //    }
+
 
 
 

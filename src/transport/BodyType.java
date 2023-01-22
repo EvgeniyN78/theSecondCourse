@@ -18,7 +18,6 @@ public enum BodyType {
         return nameBodyType;
     }
 
-
     @Override
     public String toString() {
         return nameBodyType + ".";
