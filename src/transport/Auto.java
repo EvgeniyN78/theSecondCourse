@@ -1,8 +1,6 @@
 package transport;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Queue;
+import java.util.*;
 
 import static transport.Size.*;
 
@@ -217,9 +215,10 @@ public class Auto {
         liaz.getMechanics().add(somov);
         liaz.getSponsors().add(detal);
 
-        for (Car car : cars) {
-            System.out.println(car + "" + car.getMechanics() + "" + car.getSponsors());
-        }
+
+//        for (Car car : cars) {
+//            System.out.println(car + "" + car.getMechanics() + "" + car.getSponsors());
+//        }
         //endregion
 
         //endregion
@@ -236,15 +235,70 @@ public class Auto {
         garage.addTransport(daf);
         garage.addTransport(scania);
 
-        garage.doService();
+//        garage.doService();
 
+
+        //endregion
+
+//regionTaskHashMap
+
+        HashMap<Car, Mechanic> carMechanicHashMap = new HashMap<>();
+        carMechanicHashMap.put(ford, tihanov);
+        carMechanicHashMap.put(volvo, fedorov);
+        carMechanicHashMap.put(volvo, fedorov);
+        carMechanicHashMap.put(volvo, fedorov);
+        carMechanicHashMap.put(volvo, fedorov);
+        carMechanicHashMap.put(volvo, fedorov);
+        carMechanicHashMap.put(toyota, domin);
+        carMechanicHashMap.put(volkswagen, somov);
+        carMechanicHashMap.put(kamaz, fedorov);
+        carMechanicHashMap.put(renault, trotskiy);
+        carMechanicHashMap.put(daf, comarov);
+        carMechanicHashMap.put(scania, somov);
+        carMechanicHashMap.put(yutong, pavlov);
+        carMechanicHashMap.put(neoplan, trotskiy);
+        carMechanicHashMap.put(maz, somov);
+        carMechanicHashMap.put(liaz, domin);
+
+//        System.out.println(carMechanicHashMap);
+
+        //endregionTaskHashMap
+
+        //regoinTaskHashSet
+        Set<Driver> driverHashSet = new HashSet<>();
+        driverHashSet.add(ivanovOS);
+        driverHashSet.add(smirnovAU);
+        driverHashSet.add(artemovBI);
+        driverHashSet.add(samsonovIV);
+        driverHashSet.add(costinUA);
+        driverHashSet.add(livonovSM);
+        driverHashSet.add(rimovSV);
+        driverHashSet.add(chelovDA);
+        driverHashSet.add(markovFI);
+        driverHashSet.add(socolovDB);
+        driverHashSet.add(mironovSE);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+
+        for (Driver driver : driverHashSet) {
+            System.out.println(driver);
+        }
 
         //endregion
 
 
 
 
+
  //endregion
+
 
 
 

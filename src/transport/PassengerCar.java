@@ -100,7 +100,7 @@ public class PassengerCar <T extends LicenseB> extends Car implements Competing{
 
     @Override
     public String toString() {
-        return "Легковой автомобиль: " +
+        return '\n' + "Легковой автомобиль: " +
                 super.toString() +
                 ", тип кузова: " +
                 getBodyType();

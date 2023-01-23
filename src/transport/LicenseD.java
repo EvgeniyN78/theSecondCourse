@@ -37,6 +37,6 @@ public class LicenseD extends Driver <Bus>{
 
     @Override
     public String toString() {
-        return "LicenseD{} " + super.toString();
+        return super.toString();
     }
 }

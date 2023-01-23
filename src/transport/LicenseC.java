@@ -38,6 +38,6 @@ public class LicenseC extends Driver <Truck>{
 
     @Override
     public String toString() {
-        return "LicenseC{} " + super.toString();
+        return super.toString();
     }
 }
