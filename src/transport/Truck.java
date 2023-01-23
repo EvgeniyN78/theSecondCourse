@@ -94,6 +94,6 @@ public class Truck <T extends LicenseC> extends Car{
 
     @Override
     public String toString() {
-        return "Грузовик: " + super.toString() + getLoadCapasity();
+        return '\n' + "Грузовик: " + super.toString() + getLoadCapasity();
     }
 }

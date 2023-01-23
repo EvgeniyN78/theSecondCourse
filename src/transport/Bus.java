@@ -83,6 +83,6 @@ public class Bus <T extends LicenseD> extends Car{
 
     @Override
     public String toString() {
-        return "Автобус: " + super.toString() + getSize();
+        return '\n' + "Автобус: " + super.toString() + getSize();
     }
 }
