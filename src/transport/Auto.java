@@ -265,31 +265,7 @@ public class Auto {
         //endregionTaskHashMap
 
         //regoinTaskHashSet
-        Set<Driver> driverHashSet = new HashSet<>();
-        driverHashSet.add(ivanovOS);
-        driverHashSet.add(smirnovAU);
-        driverHashSet.add(artemovBI);
-        driverHashSet.add(samsonovIV);
-        driverHashSet.add(costinUA);
-        driverHashSet.add(livonovSM);
-        driverHashSet.add(rimovSV);
-        driverHashSet.add(chelovDA);
-        driverHashSet.add(markovFI);
-        driverHashSet.add(socolovDB);
-        driverHashSet.add(mironovSE);
-        driverHashSet.add(grachevBA);
-        driverHashSet.add(grachevBA);
-        driverHashSet.add(grachevBA);
-        driverHashSet.add(grachevBA);
-        driverHashSet.add(grachevBA);
-        driverHashSet.add(grachevBA);
-        driverHashSet.add(grachevBA);
-        driverHashSet.add(grachevBA);
-        driverHashSet.add(grachevBA);
 
-        for (Driver driver : driverHashSet) {
-            System.out.println(driver);
-        }
 
         //endregion
 
