@@ -1,5 +1,7 @@
 package transport;
 
+import java.util.Objects;
+
 public abstract class Driver <T extends Car>{
 
     private String FIO;
@@ -49,8 +51,21 @@ public abstract class Driver <T extends Car>{
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Driver<?> driver = (Driver<?>) o;
+        return Objects.equals(FIO, driver.FIO) && Objects.equals(driverLicense, driver.driverLicense) && Objects.equals(experience, driver.experience);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(FIO, driverLicense, experience);
+    }
+
+    @Override
     public String toString() {
-        return '\n' + "Водитель: " +
+        return "Водитель: " +
                 "ФИО: " + FIO + " " +
                 driverLicense +
                 ", стаж: " + experience + " лет.";
