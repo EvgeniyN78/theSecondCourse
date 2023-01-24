@@ -1,14 +1,20 @@
-package transport;
+package transport.transport.transport;
+
+import transport.enumeration.BodyType;
+import transport.transport.Competing;
+import transport.driver.drivers.LicenseB;
+import transport.transport.Car;
 
 import java.util.ArrayList;
 
-public class PassengerCar <T extends LicenseB> extends Car implements Competing{
+public class PassengerCar <T extends LicenseB> extends Car implements Competing {
 
     protected BodyType bodyType;
 
     private ArrayList<T> drivers;
 
-    public PassengerCar(String brand, String model, Double engineVolume, BodyType bodyType, String passedDiagnostics) {
+    public PassengerCar(String brand, String model, Double engineVolume,
+                        BodyType bodyType, String passedDiagnostics) {
         super(brand, model, engineVolume, passedDiagnostics);
         this.bodyType = bodyType;
         drivers = new ArrayList<>();
@@ -19,8 +25,7 @@ public class PassengerCar <T extends LicenseB> extends Car implements Competing{
         drivers = new ArrayList<>();
     }
 
-    //regionMetods
-
+    //regionMethods
     @Override
     public boolean service() {
         return Math.random() > 0.7;
@@ -38,7 +43,6 @@ public class PassengerCar <T extends LicenseB> extends Car implements Competing{
     public void setBodyType(BodyType BodyType) {
             this.bodyType = bodyType;
     }
-
 
     @Override
     public void passDiagnostics() throws IllegalArgumentException{
@@ -96,7 +100,6 @@ public class PassengerCar <T extends LicenseB> extends Car implements Competing{
     public ArrayList<T> getDrivers() {
         return drivers;
     }
-
 
     @Override
     public String toString() {

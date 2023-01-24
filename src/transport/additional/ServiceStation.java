@@ -1,4 +1,6 @@
-package transport;
+package transport.additional;
+
+import transport.transport.Car;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -30,5 +32,4 @@ public class ServiceStation<T extends Car> {
     public String getServiceStation() {
         return name;
     }
-
 }

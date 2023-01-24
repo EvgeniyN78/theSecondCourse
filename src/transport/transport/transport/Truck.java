@@ -1,16 +1,21 @@
-package transport;
+package transport.transport.transport;
+
+import transport.driver.drivers.LicenseC;
+import transport.enumeration.LoadCapacity;
+import transport.transport.Car;
 
 import java.util.ArrayList;
 
-public class Truck <T extends LicenseC> extends Car{
+public class Truck<T extends LicenseC> extends Car {
 
-    protected LoadCapasity loadCapasity;
+    protected LoadCapacity loadCapacity;
 
     private ArrayList<T> drivers;
 
-    public Truck(String brand, String model, Double engineVolume, LoadCapasity loadCapasity, String passedDiagnostics) {
+    public Truck(String brand, String model, Double engineVolume,
+                 LoadCapacity loadCapacity, String passedDiagnostics) {
         super(brand, model, engineVolume, passedDiagnostics);
-        this.loadCapasity = loadCapasity;
+        this.loadCapacity = loadCapacity;
         drivers = new ArrayList<>();
     }
 
@@ -19,7 +24,7 @@ public class Truck <T extends LicenseC> extends Car{
     }
 
     @Override
-    public void passDiagnostics() throws IllegalArgumentException{
+    public void passDiagnostics() throws IllegalArgumentException {
         if (getPassedDiagnostics() == "yes") {
             System.out.println("Грузовик " + getBrand() + " " + getModel() + " прошёл диагностику.");
         } else {
@@ -33,19 +38,19 @@ public class Truck <T extends LicenseC> extends Car{
 
     @Override
     public void printType() {
-        if (getLoadCapasity() == null) {
+        if (getLoadCapacity() == null) {
             System.out.println("Данных по транспортному средству недостаточно");
         } else {
-            System.out.println(getLoadCapasity());
+            System.out.println(getLoadCapacity());
         }
     }
 
-    public LoadCapasity getLoadCapasity() {
-        return loadCapasity;
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
     }
 
-    public void setLoadCapasity(LoadCapasity loadCapasity) {
-        this.loadCapasity = loadCapasity;
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
     }
 
     public ArrayList<T> getDrivers() {
@@ -94,6 +99,6 @@ public class Truck <T extends LicenseC> extends Car{
 
     @Override
     public String toString() {
-        return '\n' + "Грузовик: " + super.toString() + getLoadCapasity();
+        return '\n' + "Грузовик: " + super.toString() + getLoadCapacity();
     }
 }

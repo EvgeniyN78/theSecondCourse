@@ -1,6 +1,8 @@
-package transport;
+package transport.additional;
 
-public class Sponsor <T extends Car> {
+import transport.transport.Car;
+
+public class Sponsor<T extends Car> {
 
     private final String name;
     private Integer amountOfSupport;
@@ -30,6 +32,6 @@ public class Sponsor <T extends Car> {
     public String toString() {
         return '\n' + "Спонсор " +
                 "компания: " + '\"' + name + '\"' +
-                ", сумма заезда: " + amountOfSupport +  " руб." + "\n";
+                ", сумма заезда: " + amountOfSupport + " руб." + "\n";
     }
 }

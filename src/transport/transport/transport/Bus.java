@@ -1,9 +1,12 @@
-package transport;
+package transport.transport.transport;
 
-import java.io.IOException;
+import transport.driver.drivers.LicenseD;
+import transport.enumeration.Size;
+import transport.transport.Car;
+
 import java.util.ArrayList;
 
-public class Bus <T extends LicenseD> extends Car{
+public class Bus<T extends LicenseD> extends Car {
 
     protected Size size;
 
@@ -15,8 +18,7 @@ public class Bus <T extends LicenseD> extends Car{
         drivers = new ArrayList<>();
     }
 
-    //regionMetods
-
+    //regionMethods
     @Override
     public boolean service() {
         System.out.println("Автобусу " + getBrand() + " " + getModel() + " диагностика не требуется.");
@@ -29,7 +31,7 @@ public class Bus <T extends LicenseD> extends Car{
     }
 
     @Override
-    public void passDiagnostics() throws IllegalArgumentException{
+    public void passDiagnostics() throws IllegalArgumentException {
         throw new IllegalArgumentException("Автобусу " + getBrand() + " диагностика не требуется");
     }
 
@@ -68,7 +70,8 @@ public class Bus <T extends LicenseD> extends Car{
     }
 
     public void getStartMessage(LicenseD licenseD) {
-        System.out.println("Водитель " + licenseD.getFIO() + " управляет автомобилем " + getBrand() +
+        System.out.println("Водитель " + licenseD.getFIO() +
+                " управляет автомобилем " + getBrand() +
                 " и будет участвовать в заезде");
     }
 //endregion

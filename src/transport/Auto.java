@@ -1,8 +1,22 @@
 package transport;
 
+import transport.additional.Mechanic;
+import transport.additional.ServiceStation;
+import transport.additional.Sponsor;
+import transport.driver.Driver;
+import transport.driver.drivers.LicenseB;
+import transport.driver.drivers.LicenseC;
+import transport.driver.drivers.LicenseD;
+import transport.enumeration.BodyType;
+import transport.enumeration.LoadCapacity;
+import transport.transport.Car;
+import transport.transport.transport.Bus;
+import transport.transport.transport.PassengerCar;
+import transport.transport.transport.Truck;
+
 import java.util.*;
 
-import static transport.Size.*;
+import static transport.enumeration.Size.*;
 
 public class Auto {
     public static void main(String[] args) {
@@ -36,7 +50,6 @@ public class Auto {
 //endregion
 
 //regionНаследование
-//
 //        Train lastochka = new Train("Ласточка", "B-901", 2011, "России", "", 0,
 //                3500.00, 0.0, "Белорусский вокзал", "Минск-Пассажирский", 11);
 //
@@ -62,10 +75,12 @@ public class Auto {
 //endregion
 
 //regionПолиморфизм, перечисления (enum)
-
-        PassengerCar<LicenseB> ford = new PassengerCar<>("Ford", "focus", 2.2, BodyType.HATCHBACK,"yes");
-        PassengerCar<LicenseB> volvo = new PassengerCar<>("Volvo", "s90", 2.0, BodyType.SEDAN, "yes");
-        PassengerCar<LicenseB> toyota = new PassengerCar<>("Toyota", "hilux", 2.5, BodyType.CROSSOVER,"yes");
+        PassengerCar<LicenseB> ford = new PassengerCar<>("Ford", "focus", 2.2,
+                BodyType.HATCHBACK, "yes");
+        PassengerCar<LicenseB> volvo = new PassengerCar<>("Volvo", "s90", 2.0,
+                BodyType.SEDAN, "yes");
+        PassengerCar<LicenseB> toyota = new PassengerCar<>("Toyota", "hilux", 2.5,
+                BodyType.CROSSOVER, "yes");
         PassengerCar<LicenseB> volkswagen = new PassengerCar<>("Volkswagen", "polo", 2.0,
                 BodyType.SEDAN, "yes");
 
@@ -84,16 +99,21 @@ public class Auto {
 //        volkswagen.bestLapTime();
 //        volkswagen.maxSpeed();
 //        volkswagen.pitStop();
-//        System.out.println("Водитель " + ivanovOS.getFIO() + " управляет автомобилем " + volkswagen.getBrand() +" и будет участвовать в заезде");
+//        System.out.println("Водитель " + ivanovOS.getFIO() + " управляет автомобилем " + volkswagen.getBrand() +
+//         " и будет участвовать в заезде");
 //        volkswagen.getStartMessage(ivanovOS);
 //        ford.printType();
 //        volkswagen.printType();
 //        samsonovIV.checkLicense();
 
-        Truck<LicenseC> kamaz = new Truck<>("Kamaz", "i750", 11.8, LoadCapasity.N2, "yes");
-        Truck<LicenseC> renault = new Truck<>("Renault", "Z400", 10.5, LoadCapasity.N3, "yes");
-        Truck<LicenseC> daf = new Truck<>("DAF", "U12", 12.4, LoadCapasity.N3, "yes");
-        Truck<LicenseC> scania = new Truck<>("Scania", "DK46", 11.2, LoadCapasity.N2, "yes");
+        Truck<LicenseC> kamaz = new Truck<>("Kamaz", "i750", 11.8,
+                LoadCapacity.N2, "yes");
+        Truck<LicenseC> renault = new Truck<>("Renault", "Z400", 10.5,
+                LoadCapacity.N3, "yes");
+        Truck<LicenseC> daf = new Truck<>("DAF", "U12", 12.4,
+                LoadCapacity.N3, "yes");
+        Truck<LicenseC> scania = new Truck<>("Scania", "DK46", 11.2,
+                LoadCapacity.N2, "yes");
 
         LicenseC costinUA = new LicenseC("Костин Ю.А.", "В/у кат.<C>", 19);
         LicenseC livonovSM = new LicenseC("Ливонов С.М.", "В/у кат.<C>", 7);
@@ -125,20 +145,27 @@ public class Auto {
 //        yutong.printType();
 //        neoplan.printType();
 //        grachevBA.checkLicense();
-
+//
 //        checkDiagnostics(volkswagen, volvo, ford, toyota, scania, kamaz, renault, daf, yutong, neoplan, maz, liaz);
 //endregion
 
 //regionКоллекции
-
+//
         //regionTask1
-        Mechanic<Car> tihanov = new Mechanic<>("Антон Тиханов", "Винтик&Шпунтик", Mechanic.Specialization.MECH_CAR);
-        Mechanic<Car> comarov = new Mechanic<>("Сергей Комаров", "Ключ", Mechanic.Specialization.MECH_TRUCK);
-        Mechanic<Car> pavlov = new Mechanic<>("Юрий Павлов", "СТО", Mechanic.Specialization.MECH_BUS);
-        Mechanic<Car> fedorov = new Mechanic<>("Игорь Фёдоров", "Поршень", Mechanic.Specialization.MECH_CAR_TRUCK);
-        Mechanic<Car> trotskiy = new Mechanic<>("Иван Троцкий", "Граж", Mechanic.Specialization.MECH_TRUCK_BUS);
-        Mechanic<Car> somov = new Mechanic<>("Дмитрий Сомов", "СервисАвто", Mechanic.Specialization.MECH_UNIVERSAL);
-        Mechanic<Car> domin = new Mechanic<>("Константин Домин", "Car&Bus", Mechanic.Specialization.MECH_CAR_BUS);
+        Mechanic<Car> tihanov = new Mechanic<>("Антон Тиханов",
+                "Винтик&Шпунтик", Mechanic.Specialization.MECH_CAR);
+        Mechanic<Car> comarov = new Mechanic<>("Сергей Комаров",
+                "Ключ", Mechanic.Specialization.MECH_TRUCK);
+        Mechanic<Car> pavlov = new Mechanic<>("Юрий Павлов",
+                "СТО", Mechanic.Specialization.MECH_BUS);
+        Mechanic<Car> fedorov = new Mechanic<>("Игорь Фёдоров",
+                "Поршень", Mechanic.Specialization.MECH_CAR_TRUCK);
+        Mechanic<Car> trotskiy = new Mechanic<>("Иван Троцкий",
+                "Граж", Mechanic.Specialization.MECH_TRUCK_BUS);
+        Mechanic<Car> somov = new Mechanic<>("Дмитрий Сомов",
+                "СервисАвто", Mechanic.Specialization.MECH_UNIVERSAL);
+        Mechanic<Car> domin = new Mechanic<>("Константин Домин",
+                "Car&Bus", Mechanic.Specialization.MECH_CAR_BUS);
 
         Sponsor<Car> comfort = new Sponsor<>("Комфорт", 1_000_000);
         Sponsor<Car> layner = new Sponsor<>("Лайнер", 10_000_000);
@@ -237,7 +264,6 @@ public class Auto {
 
 //        garage.doService();
 
-
         //endregion
 
 //regionTaskHashMap
@@ -264,22 +290,36 @@ public class Auto {
 
         //endregionTaskHashMap
 
-        //regoinTaskHashSet
+        //regionTaskHashSet
 
+        Set<Driver> driverHashSet = new HashSet<>();
+        driverHashSet.add(ivanovOS);
+        driverHashSet.add(smirnovAU);
+        driverHashSet.add(artemovBI);
+        driverHashSet.add(samsonovIV);
+        driverHashSet.add(costinUA);
+        driverHashSet.add(livonovSM);
+        driverHashSet.add(rimovSV);
+        driverHashSet.add(chelovDA);
+        driverHashSet.add(markovFI);
+        driverHashSet.add(socolovDB);
+        driverHashSet.add(mironovSE);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
+        driverHashSet.add(grachevBA);
 
+        for (Driver driver : driverHashSet) {
+            System.out.println(driver);
+        }
         //endregion
 
-
-
-
-
- //endregion
-
-
-
-
-
-
+        //endregion
 
     }
 
@@ -292,10 +332,5 @@ public class Auto {
 //            }
 //        }
 //    }
-
-
-
-
-
 
 }

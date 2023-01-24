@@ -1,12 +1,16 @@
-package transport;
-
-
+package transport.enumeration;
 
 public enum BodyType {
 
-    SEDAN("Седан"), HATCHBACK("Хэтчбек"), COUPE("Купе"),
-    UNIVERSAL("Универсал"), SUV("Внедорожник"), CROSSOVER("Кроссовер"),
-    PICKUP("Пикап"), VAN("Фургон"), MINIVAN("Минивен");
+    SEDAN("Седан"),
+    HATCHBACK("Хэтчбек"),
+    COUPE("Купе"),
+    UNIVERSAL("Универсал"),
+    SUV("Внедорожник"),
+    CROSSOVER("Кроссовер"),
+    PICKUP("Пикап"),
+    VAN("Фургон"),
+    MINIVAN("Минивен");
 
     private String nameBodyType;
 

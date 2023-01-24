@@ -1,23 +1,24 @@
-package transport;
+package transport.driver.drivers;
 
-public class LicenseB extends Driver <PassengerCar>{
+import transport.driver.Driver;
+import transport.transport.transport.PassengerCar;
+
+public class LicenseB extends Driver<PassengerCar> {
     public LicenseB(String FIO, String driverLicense, Integer experience) {
         super(FIO, driverLicense, experience);
     }
 
-    public LicenseB() {
-    }
-
     public void checkLicense() {
         try {
-            if (getDriverLicense() != "В/у кат.<B>" || getDriverLicense() == null || getDriverLicense().isEmpty()
+            if (getDriverLicense().equals("В/у кат.<B>")
+                    || getDriverLicense() == null
+                    || getDriverLicense().isEmpty()
                     || getDriverLicense().isBlank()) {
                 throw new IllegalArgumentException();
             }
         } catch (IllegalArgumentException e) {
             System.out.println("Водителю " + getFIO() + " необходимо указать тип прав");
         }
-
     }
 
     @Override
