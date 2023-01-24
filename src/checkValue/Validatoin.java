@@ -1,7 +1,5 @@
 package checkValue;
 
-import transport.BodyType;
-
 import java.time.LocalDate;
 import java.util.regex.Pattern;
 

@@ -1,9 +1,11 @@
-package transport;
+package transport.transport;
 
-import java.time.LocalDate;
+import transport.driver.Driver;
+import transport.additional.Mechanic;
+import transport.additional.Sponsor;
+
 import java.util.*;
 
-import static animals.Validation.validatePassedDiagnostics;
 import static checkValue.Validatoin.*;
 
 public abstract class Car implements Competing {
@@ -14,7 +16,6 @@ public abstract class Car implements Competing {
 
     private ArrayList<Mechanic> mechanics;
     private ArrayList<Sponsor> sponsors;
-    private HashMap<Car, Mechanic> carMechanicHashMap;
     private HashSet<Driver> driverHashSet;
 
 
@@ -25,7 +26,6 @@ public abstract class Car implements Competing {
         this.passedDiagnostics = passedDiagnostics;
         mechanics = new ArrayList<>();
         sponsors = new ArrayList<>();
-        carMechanicHashMap = new HashMap<>();
         driverHashSet = new HashSet<>();
     }
 
@@ -73,6 +73,7 @@ public abstract class Car implements Competing {
 
     public void getStartMessage() {
     }
+
     public abstract void printType();
 
     //endregion
@@ -83,10 +84,6 @@ public abstract class Car implements Competing {
 
     public ArrayList<Sponsor> getSponsors() {
         return sponsors;
-    }
-
-    public HashMap<Car, Mechanic> getCarMechanicHashMap() {
-        return carMechanicHashMap;
     }
 
     public HashSet<Driver> getDriverHashSet() {
@@ -122,17 +119,22 @@ public abstract class Car implements Competing {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Car car = (Car) o;
-        return Objects.equals(brand, car.brand) && Objects.equals(model, car.model) && Objects.equals(engineVolume, car.engineVolume) && Objects.equals(passedDiagnostics, car.passedDiagnostics) && Objects.equals(mechanics, car.mechanics) && Objects.equals(sponsors, car.sponsors) && Objects.equals(carMechanicHashMap, car.carMechanicHashMap) && Objects.equals(driverHashSet, car.driverHashSet);
+        return Objects.equals(brand, car.brand) && Objects.equals(model, car.model)
+                && Objects.equals(engineVolume, car.engineVolume)
+                && Objects.equals(passedDiagnostics, car.passedDiagnostics)
+                && Objects.equals(mechanics, car.mechanics)
+                && Objects.equals(sponsors, car.sponsors)
+                && Objects.equals(driverHashSet, car.driverHashSet);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(brand, model, engineVolume, passedDiagnostics, mechanics, sponsors, carMechanicHashMap, driverHashSet);
+        return Objects.hash(brand, model, engineVolume, passedDiagnostics, mechanics, sponsors, driverHashSet);
     }
 
     @Override
     public String toString() {
-        return  "марка: " + brand +
+        return "марка: " + brand +
                 ", модель: " + model +
                 ", объём двигателя: " + engineVolume;
     }

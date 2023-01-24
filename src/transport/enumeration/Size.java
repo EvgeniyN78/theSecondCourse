@@ -1,7 +1,11 @@
-package transport;
+package transport.enumeration;
 
 public enum Size {
-    XS(null, 10), S(null, 25), M(40, 50), L(60, 80), XL(100, 120);
+    XS(null, 10),
+    S(null, 25),
+    M(40, 50),
+    L(60, 80),
+    XL(100, 120);
 
     private Integer min;
     private Integer max;

@@ -1,12 +1,13 @@
-package transport;
+package transport.additional;
 
-public class Mechanic <T extends Car> {
+import transport.transport.Car;
+
+public class Mechanic<T extends Car> {
 
     private final String nameAndSurname;
     private final String companyMechanic;
 
     protected Specialization specialization;
-
 
     public Mechanic(String nameAndSurname, String companyMechanic, Specialization specialization) {
         this.nameAndSurname = nameAndSurname;
@@ -58,8 +59,7 @@ public class Mechanic <T extends Car> {
     @Override
     public String toString() {
         return '\n' + "Механик " + nameAndSurname +
-                ", Компания " + '\"' + companyMechanic +'\"'
+                ", Компания " + '\"' + companyMechanic + '\"'
                 + ", " + specialization;
     }
-
 }

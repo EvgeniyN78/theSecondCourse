@@ -1,17 +1,19 @@
-package transport;
+package transport.driver.drivers;
 
-public class LicenseD extends Driver <Bus>{
-    public LicenseD(String FIO, String driverLicense, Integer experience) {
+import transport.driver.Driver;
+import transport.transport.transport.Truck;
+
+public class LicenseC extends Driver<Truck> {
+    public LicenseC(String FIO, String driverLicense, Integer experience) {
         super(FIO, driverLicense, experience);
-    }
-
-    public LicenseD() {
     }
 
     @Override
     public void checkLicense() {
         try {
-            if (getDriverLicense() != "В/у кат.<D>" || getDriverLicense() == null || getDriverLicense().isEmpty()
+            if (getDriverLicense().equals("В/у кат.<C>")
+                    || getDriverLicense() == null
+                    || getDriverLicense().isEmpty()
                     || getDriverLicense().isBlank()) {
                 throw new IllegalArgumentException();
             }

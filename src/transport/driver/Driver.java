@@ -1,8 +1,10 @@
-package transport;
+package transport.driver;
+
+import transport.transport.Car;
 
 import java.util.Objects;
 
-public abstract class Driver <T extends Car>{
+public abstract class Driver<T extends Car> {
 
     private String FIO;
     private String driverLicense;
@@ -26,6 +28,7 @@ public abstract class Driver <T extends Car>{
     public void finishMoving() {
         System.out.println("Остановиться. Заглушить двигатель.");
     }
+
     public void refuel() {
         System.out.println("Заправить топливный бак.");
     }
@@ -55,7 +58,8 @@ public abstract class Driver <T extends Car>{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Driver<?> driver = (Driver<?>) o;
-        return Objects.equals(FIO, driver.FIO) && Objects.equals(driverLicense, driver.driverLicense) && Objects.equals(experience, driver.experience);
+        return Objects.equals(FIO, driver.FIO) && Objects.equals(driverLicense,
+                driver.driverLicense) && Objects.equals(experience, driver.experience);
     }
 
     @Override
