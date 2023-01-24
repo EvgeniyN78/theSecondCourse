@@ -13,7 +13,6 @@ public abstract class Mammals extends Animals {
         super(name, age, livingEnvironment);
         this.movementSpeed = validateStandardInteger(movementSpeed, 1);
         this.TypeOfFood = validateStandardStr(TypeOfFood, "milk");
-
     }
 
     //    regionGS
@@ -31,7 +30,6 @@ public abstract class Mammals extends Animals {
 //    endregion
 
 //    regionMethods
-
     @Override
     public void eat() {
         System.out.println("Регулярно");
@@ -50,9 +48,7 @@ public abstract class Mammals extends Animals {
     public void walk() {
         System.out.println("Гуляют в среде обитания");
     }
-
 //    endregion
-
 
     @Override
     public boolean equals(Object o) {

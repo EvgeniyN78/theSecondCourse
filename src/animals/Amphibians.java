@@ -33,8 +33,5 @@ public class Amphibians extends Animals {
     public void hunt() {
         System.out.println("Охотится на насекомых");
     }
-
 //    endregion
-
-
 }

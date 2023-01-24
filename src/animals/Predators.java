@@ -36,8 +36,6 @@ public class Predators extends Mammals {
     }
 
     public void hunt() {
-
         System.out.println("Охотятся в своей среде обитания");
     }
-
 }

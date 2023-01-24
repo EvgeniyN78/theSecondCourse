@@ -1,4 +1,4 @@
-package Password;
+package password;
 
 public class MainEx {
 
@@ -11,5 +11,4 @@ public class MainEx {
             System.out.println("Данные не валидны");
         }
     }
-
 }

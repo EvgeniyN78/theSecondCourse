@@ -33,11 +33,4 @@ public class NotFling extends Birds {
     public void hunt() {
         System.out.println("Охотятся днём");
     }
-
-    //возможно метод интерфейса:
-//    @Override
-//    public void walk() {
-//        super.walk();
-//    }
-
 }

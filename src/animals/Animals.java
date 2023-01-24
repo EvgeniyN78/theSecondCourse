@@ -16,7 +16,6 @@ public abstract class Animals {
         this.livingEnvironment = validateStandardStr(livingEnvironment);
     }
 
-
     //regionGS
     public String getName() {
         return name;
@@ -41,7 +40,6 @@ public abstract class Animals {
     public void setLivingEnvironment(String livingEnvironment) {
         this.livingEnvironment = validateStandardStr(livingEnvironment);
     }
-
     //endregion
 
     public abstract void eat();
