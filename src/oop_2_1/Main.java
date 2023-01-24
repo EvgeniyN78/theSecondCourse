@@ -13,7 +13,5 @@ public class Main {
         System.out.println(katia);
         System.out.println(artem);
         System.out.println(vladimir);
-
-
     }
 }

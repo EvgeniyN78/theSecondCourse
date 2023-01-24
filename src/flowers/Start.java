@@ -3,10 +3,10 @@ package flowers;
 public class Start {
     public static void main(String[] args) {
 
-        Flower rose = new Flower("Роза", " ", "Голандия", 35.59,null, 5);
-        Flower hrisantem = new Flower("Хризантема"," ", "", 15.00,5, 5);
-        Flower pion = new Flower("Пион", "", "Англия", 69.90,1, 0);
-        Flower gipsofila = new Flower("Гипсогена", "", "Турция", 19.5,10, 5);
+        Flower rose = new Flower("Роза", " ", "Голандия", 35.59, null, 5);
+        Flower hrisantem = new Flower("Хризантема", " ", "", 15.00, 5, 5);
+        Flower pion = new Flower("Пион", "", "Англия", 69.90, 1, 0);
+        Flower gipsofila = new Flower("Гипсогена", "", "Турция", 19.5, 10, 5);
 
 //        System.out.println(rose);
 //        System.out.println(hrisantem);
@@ -33,8 +33,10 @@ public class Start {
         double sum = 0;
         for (Flower flower : bouquet) {
             sum = sum + (flower.getQuantity() * flower.getCost());
-        } return sum * 1.10;
+        }
+        return sum * 1.10;
     }
+
     public static void printListBouquet(Flower[] bouquet) {
         for (Flower flower : bouquet) {
             if (flower.getQuantity() > 0) {
@@ -42,6 +44,7 @@ public class Start {
             }
         }
     }
+
     public static int calculationMinLifeSpan(Flower[] bouquet) {
         int minLifeSpan = 1000000;
         for (Flower flower : bouquet) {
@@ -50,6 +53,7 @@ public class Start {
                     minLifeSpan = flower.getLifeSpan();
                 }
             }
-        } return minLifeSpan;
+        }
+        return minLifeSpan;
     }
 }

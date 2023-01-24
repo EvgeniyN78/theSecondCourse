@@ -17,7 +17,6 @@ public abstract class Birds extends Animals {
     public String getTypeOfMovement() {
         return typeOfMovement;
     }
-
 //    endregion
 
     //    regionMethods
@@ -37,9 +36,7 @@ public abstract class Birds extends Animals {
     }
 
     public abstract void hunt();
-
 //    endregion
-
 
     @Override
     public boolean equals(Object o) {
