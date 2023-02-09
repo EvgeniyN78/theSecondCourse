@@ -2,7 +2,7 @@ package animals;
 
 import java.util.Objects;
 
-import static animals.Validation.validateStandardStr;
+import static validation.Validation.validateStandardStr;
 
 public abstract class Birds extends Animals {
     protected String typeOfMovement;
