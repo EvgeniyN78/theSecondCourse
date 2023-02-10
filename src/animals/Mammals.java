@@ -2,8 +2,8 @@ package animals;
 
 import java.util.Objects;
 
-import static animals.Validation.validateStandardInteger;
-import static animals.Validation.validateStandardStr;
+import static validation.Validation.validateStandardInteger;
+import static validation.Validation.validateStandardStr;
 
 public abstract class Mammals extends Animals {
     protected Integer movementSpeed;

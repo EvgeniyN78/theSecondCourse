@@ -1,6 +1,14 @@
-package animals;
+package validation;
 
 public class Validation {
+
+    public static String checkString(String str) {
+        if (str == null || str.isEmpty() || str.isBlank()) {
+            throw new WrongInputException("Некорректный ввод.");
+        } else {
+            return str;
+        }
+    }
 
     public static String validateStandardStr(String value) {
         return value != null && !value.isEmpty() && !value.isBlank() ? value : "default";
