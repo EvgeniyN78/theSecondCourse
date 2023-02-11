@@ -160,22 +160,6 @@ public class Main {
     private static void printAllTasks() {
         System.out.println(calendar);
     }
-
-    //regionLiveCoding
-    /* Билет № 15
-   1-е задание:
-   Напишите метод, который возводит число в куб.
-    */
-    public static double pow(double value) {
-        return Math.pow(value, 3);
-    } //Данный метод возвращает значение первого аргумента, возведенное в степень второго аргумента.
-
-    /*2-е задание:
-    Напишите пример перехвата и обработки исключения в секции throws-метода и передачи вызывающему методу.
-     */
-
-
-    //endregion
 }
 
 

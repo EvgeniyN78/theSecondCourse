@@ -15,7 +15,7 @@ public class WeeklyTask extends Task implements Repeatable {
 
     @Override
     public boolean check(LocalDate date) {
-        return (timeOfCreation.toLocalDate().isBefore(date) || timeOfCreation.toLocalDate().equals(date)) &&
+        return timeOfCreation.toLocalDate().equals(date) &&
                 timeOfCreation.getDayOfWeek().equals(date.getDayOfWeek());
     }
 }
