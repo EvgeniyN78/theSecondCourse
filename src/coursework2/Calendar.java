@@ -1,7 +1,6 @@
 package coursework2;
 
 import coursework2.tasks.Repeatable;
-
 import java.time.LocalDate;
 import java.util.*;
 

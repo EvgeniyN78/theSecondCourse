@@ -17,10 +17,4 @@ public class DailyTask extends Task implements Repeatable {
     public boolean check(LocalDate date) {
         return timeOfCreation.toLocalDate().isBefore(date) || timeOfCreation.toLocalDate().equals(date);
     }
-
-//    @Override
-//    public LocalDateTime getNextDate() {
-//        return null;
-//    }
-
 }

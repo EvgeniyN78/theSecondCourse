@@ -15,4 +15,5 @@ public class TooLongStringException extends Exception {
     public TooLongStringException(Throwable cause) {
         super(cause);
     }
+
 }

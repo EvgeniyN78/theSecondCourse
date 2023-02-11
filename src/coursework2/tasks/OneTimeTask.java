@@ -4,7 +4,6 @@ import coursework2.Task;
 import coursework2.TaskType;
 import validation.WrongInputException;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class OneTimeTask extends Task {
