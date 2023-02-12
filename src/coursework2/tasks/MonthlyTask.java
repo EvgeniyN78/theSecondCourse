@@ -15,7 +15,7 @@ public class MonthlyTask extends Task implements Repeatable {
 
     @Override
     public boolean check(LocalDate date) {
-        return timeOfCreation.toLocalDate().equals(date) &&
+        return (timeOfCreation.toLocalDate().isBefore(date) || timeOfCreation.toLocalDate().equals(date)) &&
                 timeOfCreation.getDayOfMonth() == date.getDayOfMonth();
     }
 }
