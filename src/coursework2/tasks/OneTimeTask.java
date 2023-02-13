@@ -11,4 +11,5 @@ public class OneTimeTask extends Task {
                        LocalDateTime timeOfCreation) throws WrongInputException {
         super(heading, description, taskType, timeOfCreation);
     }
+
 }

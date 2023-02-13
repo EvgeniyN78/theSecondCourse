@@ -19,4 +19,5 @@ public class YearlyTask extends Task implements Repeatable {
                 (timeOfCreation.getDayOfMonth() == date.getDayOfMonth() &&
                         timeOfCreation.getMonth().equals(date.getMonth()));
     }
+
 }

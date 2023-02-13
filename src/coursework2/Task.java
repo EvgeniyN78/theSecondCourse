@@ -28,7 +28,6 @@ public abstract class Task {
         this.id = counter++;
     }
 
-    //regionMethods
     public String getHeading() {
         return heading;
     }
@@ -90,5 +89,5 @@ public abstract class Task {
                 ", время создания: " + timeOfCreation +
                 ", id: " + id;
     }
-    //endregion
+
 }

@@ -18,4 +18,5 @@ public class MonthlyTask extends Task implements Repeatable {
         return (timeOfCreation.toLocalDate().isBefore(date) || timeOfCreation.toLocalDate().equals(date)) &&
                 timeOfCreation.getDayOfMonth() == date.getDayOfMonth();
     }
+
 }
