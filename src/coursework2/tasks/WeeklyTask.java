@@ -19,8 +19,4 @@ public class WeeklyTask extends Task implements Repeatable {
                 timeOfCreation.getDayOfWeek().equals(date.getDayOfWeek());
     }
 
-//    @Override
-//    public LocalDateTime getNextDate() {
-//        return null;
-//    }
 }

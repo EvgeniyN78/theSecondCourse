@@ -1,9 +1,11 @@
 package coursework2;
 
 import validation.WrongInputException;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Objects;
+
 import static validation.Validation.checkString;
 
 public abstract class Task {
@@ -26,7 +28,6 @@ public abstract class Task {
         this.id = counter++;
     }
 
-    //regionMethods
     public String getHeading() {
         return heading;
     }
@@ -88,5 +89,5 @@ public abstract class Task {
                 ", время создания: " + timeOfCreation +
                 ", id: " + id;
     }
-    //endregion
+
 }

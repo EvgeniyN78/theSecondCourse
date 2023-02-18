@@ -91,19 +91,19 @@ public class Main {
                 int type = scanner.nextInt();
                 switch (type) {
                     case 1:
-                        task = new OneTimeTask(heading,description,taskType,timeOfCreation);
+                        task = new OneTimeTask(heading, description, taskType, timeOfCreation);
                         break label;
                     case 2:
-                        task = new DailyTask(heading,description,taskType,timeOfCreation);
+                        task = new DailyTask(heading, description, taskType, timeOfCreation);
                         break label;
                     case 3:
-                        task = new WeeklyTask(heading,description,taskType,timeOfCreation);
+                        task = new WeeklyTask(heading, description, taskType, timeOfCreation);
                         break label;
                     case 4:
-                        task = new MonthlyTask(heading,description,taskType,timeOfCreation);
+                        task = new MonthlyTask(heading, description, taskType, timeOfCreation);
                         break label;
                     case 5:
-                        task = new YearlyTask(heading,description,taskType,timeOfCreation);
+                        task = new YearlyTask(heading, description, taskType, timeOfCreation);
                         break label;
                     default:
                         System.out.println("Введите: 1 - однократная; 2 - ежедневная; 3 - еженедельная;" +
@@ -161,22 +161,6 @@ public class Main {
         System.out.println(calendar);
     }
 
-    //regionLiveCoding
-    /* Билет № 15
-   1-е задание:
-   Напишите метод, который возводит число в куб.
-    */
-    public static double pow(double value) {
-        return Math.pow(value, 3);
-    } //Данный метод возвращает значение первого аргумента, возведенное в степень второго аргумента.
-
-    /*2-е задание:
-    Напишите пример перехвата и обработки исключения в секции throws-метода и передачи вызывающему методу.
-     */
-
-
-
-    //endregion
 }
 
 

@@ -1,7 +1,6 @@
 package coursework2;
 
 import coursework2.tasks.Repeatable;
-
 import java.time.LocalDate;
 import java.util.*;
 
@@ -37,4 +36,5 @@ public class Calendar {
     public String toString() {
         return "Задача: " + tasks;
     }
+
 }

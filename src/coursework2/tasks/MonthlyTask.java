@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 
 public class MonthlyTask extends Task implements Repeatable {
     public MonthlyTask(String heading, String description, TaskType taskType,
-                      LocalDateTime timeOfCreation) throws WrongInputException {
+                       LocalDateTime timeOfCreation) throws WrongInputException {
         super(heading, description, taskType, timeOfCreation);
     }
 
@@ -19,8 +19,4 @@ public class MonthlyTask extends Task implements Repeatable {
                 timeOfCreation.getDayOfMonth() == date.getDayOfMonth();
     }
 
-//    @Override
-//    public LocalDateTime getNextDate() {
-//        return null;
-//    }
 }
